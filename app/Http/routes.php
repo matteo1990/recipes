@@ -2,30 +2,26 @@
 
 
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
 });
 
-Route::get('/index', function(){
-    return view('index');
+
+Route::group(['middleware' => ['web','auth']], function () {
     
+    Route::get('/', function () {
+        return view('index');
+    });
+    
+    Route::get('/index', function(){
+        return view('index');
+        
+    });
+    
+    Route::get('new_recipes', function(){
+        return view('new_recipes');
+    });
+    
+   /* Route::get('/contact', 'WelcomeController@Contact');*/
 });
 
-Route::get('/contact', 'WelcomeController@Contact');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Route::group(['middleware' => ['web']], function () {
-    //
-});
