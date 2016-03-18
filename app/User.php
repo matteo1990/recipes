@@ -14,6 +14,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password'
     ];
+    
+    public function ingredients(){
+         return $this->hasMany('app\Recipe');
+    }
 
     /**
      * The attributes excluded from the model's JSON form.

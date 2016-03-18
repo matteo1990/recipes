@@ -22,6 +22,7 @@ Route::group(['middleware' => ['web','auth']], function () {
         return view('new_recipes');
     });
     
+    Route::post('sendRecipe', 'HomeController@sendRecipe');
    /* Route::get('/contact', 'WelcomeController@Contact');*/
 });
 

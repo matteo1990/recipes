@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('header')
     <div class="header">
        <h1>Aggiungi una ricetta!</h1>
@@ -8,13 +7,21 @@
 @stop
 
 @section('content')
-      <form>
+<form>
   <fieldset class="form-group">
     <label for="recipeTitle">Nome della ricetta</label>
-    <input type="text" class="form-control" id="recipeTitle" placeholder="Nome della ricetta">
-    <small class="text-muted">...e che sia buona!</small>
+    <input id="name" type="text" class="form-control" >
   </fieldset>
  
+  
+  <fieldset class="form-group">
+    <label for="Textarea">Inserisci qui il procedimento</label>
+    <textarea id="text" class="form-control" rows="3"></textarea>
+  </fieldset>
+ 
+    
+  
+  <!--
   <fieldset class="form-group">
     <label for="exampleSelect1">Example select</label>
     <select class="form-control" id="exampleSelect1">
@@ -25,15 +32,27 @@
       <option>5</option>
     </select>
   </fieldset>
-  
-  <fieldset class="form-group">
-    <label for="Textarea">Inserisci qui il procedimento</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-  </fieldset>
+  -->
+  </form>
  
+  <button id="pressMe1" class="btn btn-primary" disabled>Submit</button>
+  <br /> <br />
   
+  
+ 
 
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<form>
+      <fieldset class="form-group">
+          <label>Inserisci qui il nome dell'ingrediente</label>
+          <input class="form-control" id="ingrName">
+      </fieldset>
+</form>      
+      <button id="pressMe2" class="btn btn-primary" disabled>Submit</button>
+      
+      <div id="ingredients_list"> </div>
+
+
+
+ 
+ 
 @stop
