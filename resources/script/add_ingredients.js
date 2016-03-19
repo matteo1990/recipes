@@ -2,16 +2,22 @@ $().ready(function(){
     
     /*$('#pressMe2').prop('disabled', true);	*/
     
+        
+    
         $("#pressMe1").click(function(){ 
             var name = $("#name").val();
             var text = $("#text").val();
             $.ajax({
                 type: 'POST',
-                data: {'newRecipeName': name, 'newRecipeProcedure': text},
+                data: {'newRecipeName': name, 'newRecipeProcedure': text, '_token': ('input[name=_token]').val()},
                 url: 'sendRecipe'
                 })
+           $('#name').val(" ");
+           $('#text').val(" ");
     
         });
+        
+        
         
         $("#name").keypress( function() {
             var textlength = $('#name').val().length;

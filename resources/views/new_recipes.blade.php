@@ -7,52 +7,43 @@
 @stop
 
 @section('content')
-<form>
-  <fieldset class="form-group">
-    <label for="recipeTitle">Nome della ricetta</label>
-    <input id="name" type="text" class="form-control" >
-  </fieldset>
- 
+
+{!! Form::open(['url' => 'sendRecipe']) !!}
   
-  <fieldset class="form-group">
-    <label for="Textarea">Inserisci qui il procedimento</label>
-    <textarea id="text" class="form-control" rows="3"></textarea>
-  </fieldset>
- 
+    <div class='row'>
+      <div class=".col-xs-6 .col-md-4">
+        {!! Form::label('Nome della ricetta') !!}
+      </div>  
+        {!! Form::text ('title', null,['id'=>'name', 'class'=>'form-control']) !!}
+    </div>
     
+    <br /> 
+    
+    <div class='row'>
+        {!! Form::label('Come si fa?') !!}
+        {!! Form::textarea('procedure', null, ['id'=>'text', 'class'=>'form-control', 'rows'=>'3']) !!}
+    </div> 
+    
+    <br />
+ 
+    {!! Form::button ('Invia', ['id'=>'pressMe1', 'class'=>'btn btn-primary', 'disabled']) !!}
+    
+{!! Form::close() !!}
+ 
+    <br /> 
+
+{!! Form::open(['url' => 'sendIngredient']) !!}
+    <div class='row'>
+      {!! Form::label("inserisci qui il nome dell'ingrediente") !!}
+      {!! Form::text('ingredients', null, ['class'=>'form-control', 'id'=>'ingrName']) !!}
+    </div>
   
-  <!--
-  <fieldset class="form-group">
-    <label for="exampleSelect1">Example select</label>
-    <select class="form-control" id="exampleSelect1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </fieldset>
-  -->
-  </form>
- 
-  <button id="pressMe1" class="btn btn-primary" disabled>Submit</button>
-  <br /> <br />
+    <br /> 
   
+      {!! Form::button ('Invia', ['id'=>'pressMe2', 'class'=>'btn btn-primary', 'disabled']) !!}
+
+    <div id="ingredients_list"> </div>
   
- 
+{!! Form::close() !!}  
 
-<form>
-      <fieldset class="form-group">
-          <label>Inserisci qui il nome dell'ingrediente</label>
-          <input class="form-control" id="ingrName">
-      </fieldset>
-</form>      
-      <button id="pressMe2" class="btn btn-primary" disabled>Submit</button>
-      
-      <div id="ingredients_list"> </div>
-
-
-
- 
- 
 @stop
