@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+  
 @section('header')
     <div class="header">
        <h1>Aggiungi una ricetta!</h1>
@@ -8,22 +8,18 @@
 
 @section('content')
 
-{!! Form::open(['url' => 'sendRecipe']) !!}
+{!! Form::open(['url' => 'sendRecipe', 'method'=>'post']) !!}
   
     <div class='row'>
-      <div class=".col-xs-6 .col-md-4">
         {!! Form::label('Nome della ricetta') !!}
-      </div>  
-        {!! Form::text ('title', null,['id'=>'name', 'class'=>'form-control']) !!}
+        {!! Form::text ('name', null,['id'=>'name', 'class'=>'form-control']) !!}
     </div>
-    
     <br /> 
     
     <div class='row'>
         {!! Form::label('Come si fa?') !!}
-        {!! Form::textarea('procedure', null, ['id'=>'text', 'class'=>'form-control', 'rows'=>'3']) !!}
+        {!! Form::textarea('procedure', null, ['id'=>'procedure', 'class'=>'form-control', 'rows'=>'3']) !!}
     </div> 
-    
     <br />
  
     {!! Form::button ('Invia', ['id'=>'pressMe1', 'class'=>'btn btn-primary', 'disabled']) !!}
@@ -32,7 +28,7 @@
  
     <br /> 
 
-{!! Form::open(['url' => 'sendIngredient']) !!}
+{!! Form::open(['url' => 'sendIngredient', 'method'=>'post']) !!}
     <div class='row'>
       {!! Form::label("inserisci qui il nome dell'ingrediente") !!}
       {!! Form::text('ingredients', null, ['class'=>'form-control', 'id'=>'ingrName']) !!}

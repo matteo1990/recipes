@@ -22,7 +22,10 @@ Route::group(['middleware' => ['web','auth']], function () {
         return view('new_recipes');
     });
     
-    Route::post('sendRecipe', 'HomeController@ficcaRicette');
+   Route::post('sendRecipe', 'RecipeController@ficcaRicette');
    
+   Route::post('sendIngredient', 'RecipeController@ficcaIngredienti');
 });
+
+ 
 
