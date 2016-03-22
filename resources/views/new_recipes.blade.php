@@ -8,6 +8,23 @@
 
 @section('content')
 
+
+{!! Form::open(['url' => 'sendIngredient', 'method'=>'post']) !!}
+    <div class='row'>
+      {!! Form::label("inserisci qui il nome dell'ingrediente") !!}
+      {!! Form::text('ingredients', null, ['class'=>'form-control', 'id'=>'ingrName']) !!}
+    </div>
+  
+    <br /> 
+  
+      {!! Form::button ('Invia', ['id'=>'pressMe2', 'class'=>'btn btn-primary', 'disabled']) !!}
+
+    <div id="ingredients_list">  </div>
+  
+{!! Form::close() !!}
+
+    <br /> 
+
 {!! Form::open(['url' => 'sendRecipe', 'method'=>'post']) !!}
   
     <div class='row'>
@@ -28,18 +45,6 @@
  
     <br /> 
 
-{!! Form::open(['url' => 'sendIngredient', 'method'=>'post']) !!}
-    <div class='row'>
-      {!! Form::label("inserisci qui il nome dell'ingrediente") !!}
-      {!! Form::text('ingredients', null, ['class'=>'form-control', 'id'=>'ingrName']) !!}
-    </div>
-  
-    <br /> 
-  
-      {!! Form::button ('Invia', ['id'=>'pressMe2', 'class'=>'btn btn-primary', 'disabled']) !!}
 
-    <div id="ingredients_list"> </div>
-  
-{!! Form::close() !!}  
 
 @stop

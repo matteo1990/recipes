@@ -1,9 +1,7 @@
 $().ready(function(){
     
     /*$('#pressMe2').prop('disabled', true);	*/
-    
-        
-    
+
         $("#pressMe1").click(function(){ 
             var name = $("#name").val();
             var text = $("#procedure").val();
@@ -22,11 +20,10 @@ $().ready(function(){
     
         });
         
-
-        
          $("#pressMe2").click(function(){ 
     		var text2 = $('#ingrName').val();
     		$("#ingredients_list").prepend(text2 + '<br />');
+    		arrIngredients.push(text2);
     		$('#ingrName').val(" ");
     
             console.log(text2);
@@ -34,15 +31,19 @@ $().ready(function(){
             {
                 type: 'POST',
                 data: {'addIngredients': text2, '_token': $('input[name=_token]').val()},
-               /* success:function(){
-                window.location.href = 'index';
-            },*/
             });     
 
         });
         
         
+        /* 
+        ingredients array.
+        */
+
+        var arrIngredients = [];
         
+
+
         /*button controls: from disabled to enabled.
         */
         
