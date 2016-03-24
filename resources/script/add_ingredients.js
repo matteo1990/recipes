@@ -11,7 +11,7 @@ $().ready(function(){
                 type: 'POST',
                 data: {'newRecipeName': name, 'newRecipeProcedure': text, '_token': $('input[name=_token]').val()},
                 success:function(){
-                window.location.href = 'index';
+                window.location.href = 'recipes';
             },
             });      
             

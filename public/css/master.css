@@ -12,6 +12,22 @@ h1{color: green;
     padding: 25px;
 }
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+.table_title {
+    color:green;
+}
+
+
+#main_title{
+    color:red;
+}
+
 #ingredients_list {
     color: green;
 }
+

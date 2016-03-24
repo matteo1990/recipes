@@ -43,7 +43,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                   <span id="main_title"> My Recipes. </span>
                 </a>
             </div>
 

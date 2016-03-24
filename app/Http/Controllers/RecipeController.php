@@ -4,11 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+
 use App\Http\Requests;
 
 class RecipeController extends Controller
 {
-    public function ficcaRicette(Request $request){
+    
+    public function read(){
+        $recipes = \App\Recipe::all();
+
+        return view('recipes',['recipes' => $recipes]);
+    } 
+    
+    
+    public function annihilate($id){
+        $recipe = Recipe::find($id);
+        $recipe->delete();
+        
+        return redirect('recipes');
+        
+    }
+    
+    public function insertRecipes(Request $request){
      
         $user_id = Auth::user()->id;
         
@@ -17,10 +34,9 @@ class RecipeController extends Controller
                                         'user_id'=>$user_id]);
     }
     
-    public function ficcaIngredienti(Request $request){
+    public function insertIngredients(Request $request){
         
-        $ingredient = \App\Ingredient::create(['name'=>$request->addIngredients,
-            ]);
+        $ingredient = \App\Ingredient::create(['name'=>$request->addIngredients]);
     }
     
 
