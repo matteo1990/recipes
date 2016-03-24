@@ -42,9 +42,10 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                   <span id="main_title"> My Recipes. </span>
-                </a>
+                <a class="navbar-brand" href="{{ url('/') }}"> </a>
+                 <div class="contain_title">
+                     <a href="{{ url('/recipes') }}"> <span id="main_title"> My Recipes. </span></a>
+                </div>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">

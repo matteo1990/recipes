@@ -12,16 +12,14 @@ class RecipeController extends Controller
     
     public function read(){
         $recipes = \App\Recipe::all();
-
         return view('recipes',['recipes' => $recipes]);
     } 
-    
     
     public function annihilate($id){
         $recipe = Recipe::find($id);
         $recipe->delete();
         
-        return redirect('recipes');
+        return redirect('read_recipes');
         
     }
     

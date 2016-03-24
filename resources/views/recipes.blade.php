@@ -36,7 +36,7 @@
                 {{ $recipe->user_id }}
             </td>
             <td>
-                <a href="'recipesAnnihilation'" class="btn btn-danger">Cancella</a>
+                <a href='annihilation/{id}' class="btn btn-danger">Cancella</a>
             </td>
         </tr> 
               

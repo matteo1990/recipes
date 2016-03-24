@@ -31,3 +31,7 @@ table, th, td {
     color: green;
 }
 
+.contain_title {
+    padding: 15px;
+}
+

@@ -3,7 +3,7 @@
 
 @section('header')
     <div class="header">
-       <h1>Le mie ricette</h1>
+       <a href="{{ url('/recipes') }}"><h1>Le mie ricette</h1></a>
      </div>
 @stop
 

@@ -18,9 +18,10 @@ Route::group(['middleware' => ['web','auth']], function () {
         
     });
     
+    
     Route::get('/recipes', ['as' => 'recipe', 'uses' => 'RecipeController@read']);
 
-    Route::delete('recipes/{id}', ['as' => 'recipe', 'uses' => 'RecipeController@annihilate']);
+    Route::delete('annihilation/{id}', ['as' => 'recipe', 'uses' => 'RecipeController@annihilate']);
     
     Route::get('new_recipes', function(){
         return view('new_recipes');
