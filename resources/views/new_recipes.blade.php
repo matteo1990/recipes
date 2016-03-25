@@ -8,7 +8,7 @@
 
 @section('content')
 
-
+   
 {!! Form::open(['url' => 'sendIngredient', 'method'=>'post']) !!}
     <div class='row'>
       {!! Form::label("inserisci qui il nome dell'ingrediente") !!}

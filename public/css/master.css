@@ -19,7 +19,9 @@ table, th, td {
 }
 
 .table_title {
-    color:green;
+    color: green;
+    text-decoration: underline;
+   
 }
 
 

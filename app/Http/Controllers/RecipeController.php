@@ -1,12 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Auth;
-
 use App\Http\Requests;
-
 class RecipeController extends Controller
 {
     
@@ -16,10 +12,10 @@ class RecipeController extends Controller
     } 
     
     public function annihilate($id){
-        $recipe = Recipe::find($id);
+        $recipe = \App\Recipe::find($id);
         $recipe->delete();
         
-        return redirect('read_recipes');
+        return redirect('recipes');
         
     }
     
@@ -30,6 +26,15 @@ class RecipeController extends Controller
         $recipe = \App\Recipe::create([ 'name'=>$request->newRecipeName, 
                                         'procedure'=>$request->newRecipeProcedure, 
                                         'user_id'=>$user_id]);
+                                        
+       /* $pivot = \App\Recipe_Ingredient::create(['recipes_id'=>$request->recipes_id,
+                                                'ingredients_id'=>$request->ingredients_id
+            
+            ]);
+         $recipes = Recipe::find($recipes_id);
+         $recipes -> ingredients()->attach($ingredients_id);*/
+            
+          
     }
     
     public function insertIngredients(Request $request){
@@ -37,5 +42,4 @@ class RecipeController extends Controller
         $ingredient = \App\Ingredient::create(['name'=>$request->addIngredients]);
     }
     
-
 }

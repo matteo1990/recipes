@@ -1,12 +1,7 @@
 <?php
-
-
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 });
-
-
 Route::group(['middleware' => ['web','auth']], function () {
     
     Route::get('/', function () {
@@ -20,8 +15,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     
     
     Route::get('/recipes', ['as' => 'recipe', 'uses' => 'RecipeController@read']);
-
-    Route::delete('annihilation/{id}', ['as' => 'recipe', 'uses' => 'RecipeController@annihilate']);
+    Route::delete('recipes/{id}', ['as' => 'recipe', 'uses' => 'RecipeController@annihilate']);
     
     Route::get('new_recipes', function(){
         return view('new_recipes');

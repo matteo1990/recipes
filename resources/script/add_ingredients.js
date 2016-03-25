@@ -5,13 +5,15 @@ $().ready(function(){
         $("#pressMe1").click(function(){ 
             var name = $("#name").val();
             var text = $("#procedure").val();
-            console.log(name+" "+text);
+            
+           
+            
             $.ajax('sendRecipe',
             {
                 type: 'POST',
                 data: {'newRecipeName': name, 'newRecipeProcedure': text, '_token': $('input[name=_token]').val()},
                 success:function(){
-                window.location.href = 'read_recipes';
+                window.location.href = 'recipes';
             },
             });      
             
@@ -37,7 +39,7 @@ $().ready(function(){
         
         
         /* 
-        ingredients array.
+        ingredients' array.
         */
 
         var arrIngredients = [];

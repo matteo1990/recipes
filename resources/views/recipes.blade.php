@@ -35,9 +35,16 @@
             <td>
                 {{ $recipe->user_id }}
             </td>
+            
             <td>
-                <a href='annihilation/{id}' class="btn btn-danger">Cancella</a>
+        {!! Form::open([
+            'method' => 'DELETE',
+            'url' => ['recipes', $recipe->id]
+        ]) !!}
+            {!! Form::submit('cancella', ['class' => 'btn btn-danger']) !!}
+        {!! Form::close() !!}
             </td>
+            
         </tr> 
               
      @endforeach 
