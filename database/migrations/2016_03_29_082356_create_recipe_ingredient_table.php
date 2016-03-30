@@ -29,6 +29,6 @@ class CreateRecipeIngredientTable extends Migration
     public function down()
     {
          Schema::drop('recipe_ingredient');
+         
     }
 }
-

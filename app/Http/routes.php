@@ -23,7 +23,7 @@ Route::group(['middleware' => ['web','auth']], function () {
     
    Route::post('sendRecipe', 'RecipeController@insertRecipes');
    
-   Route::post('sendIngredient', 'RecipeController@insertIngredients');
+  // Route::post('sendRecipe', 'RecipeController@insertIngredients');
 });
 
  

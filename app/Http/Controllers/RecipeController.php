@@ -22,24 +22,24 @@ class RecipeController extends Controller
     public function insertRecipes(Request $request){
      
         $user_id = Auth::user()->id;
-        
         $recipe = \App\Recipe::create([ 'name'=>$request->newRecipeName, 
                                         'procedure'=>$request->newRecipeProcedure, 
                                         'user_id'=>$user_id]);
-                                        
-       /* $pivot = \App\Recipe_Ingredient::create(['recipes_id'=>$request->recipes_id,
-                                                'ingredients_id'=>$request->ingredients_id
-            
-            ]);
-         $recipes = Recipe::find($recipes_id);
-         $recipes -> ingredients()->attach($ingredients_id);*/
-            
-          
-    }
+         
+         
+           foreach($request->addIngredients as $ingredient){
+                $ingr = \App\Ingredient::where('name', '=', $ingredient)->first();
+
+                if ($ingr == null) {
+                    $ingr = \App\Ingredient::create(['name'=>$ingredient]);
+                }
+                      
+                $pivot = \App\Recipe_Ingredient::create(['recipes_id'=>$recipe->id,'ingredients_id'=>$ingr->id]);
+                    
+           }
     
-    public function insertIngredients(Request $request){
+       
         
-        $ingredient = \App\Ingredient::create(['name'=>$request->addIngredients]);
     }
     
 }

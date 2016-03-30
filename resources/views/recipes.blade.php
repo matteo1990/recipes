@@ -36,6 +36,7 @@
                 {{ $recipe->user_id }}
             </td>
             
+            
             <td>
         {!! Form::open([
             'method' => 'DELETE',
@@ -48,5 +49,7 @@
         </tr> 
               
      @endforeach 
+     
+     
     </table>
 @stop

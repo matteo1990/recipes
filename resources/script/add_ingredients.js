@@ -1,39 +1,33 @@
 $().ready(function(){
     
-    /*$('#pressMe2').prop('disabled', true);	*/
+    
 
         $("#pressMe1").click(function(){ 
             var name = $("#name").val();
             var text = $("#procedure").val();
-            
-           
-            
+    		//var text3 = $('#ingredients_list').html();
+    	    var text3 = arrIngredients;
+    		
             $.ajax('sendRecipe',
             {
                 type: 'POST',
-                data: {'newRecipeName': name, 'newRecipeProcedure': text, '_token': $('input[name=_token]').val()},
-                success:function(){
-                window.location.href = 'recipes';
+                data: {'addIngredients': text3, 'newRecipeName': name, 'newRecipeProcedure': text, '_token': $('input[name=_token]').val()},
+               success:function(){
+               window.location.href = 'recipes';
             },
             });      
-            
+             
            $('#name').val(" ");
            $('#procedure').val(" ");
+           $('#ingrName').val(" ");
     
         });
         
          $("#pressMe2").click(function(){ 
-    		var text2 = $('#ingrName').val();
-    		$("#ingredients_list").prepend(text2 + '<br />');
+    	    var text2 = $('#ingrName').val();
+    		$("#ingredients_list").prepend(text2 + "<br />");
     		arrIngredients.push(text2);
-    		$('#ingrName').val(" ");
-    
-            console.log(text2);
-            $.ajax('sendIngredient',
-            {
-                type: 'POST',
-                data: {'addIngredients': text2, '_token': $('input[name=_token]').val()},
-            });     
+    		$('#ingrName').val("");
 
         });
         
