@@ -8,6 +8,6 @@
 @stop
 
 @section('content')
-
+  
 @stop
 

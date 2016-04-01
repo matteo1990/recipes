@@ -5,7 +5,6 @@ $().ready(function(){
         $("#pressMe1").click(function(){ 
             var name = $("#name").val();
             var text = $("#procedure").val();
-    		//var text3 = $('#ingredients_list').html();
     	    var text3 = arrIngredients;
     		
             $.ajax('sendRecipe',
@@ -30,6 +29,8 @@ $().ready(function(){
     		$('#ingrName').val("");
 
         });
+        
+       
         
         
         /* 
@@ -56,5 +57,7 @@ $().ready(function(){
         	    	$('#pressMe2').prop('disabled', false);
             	}
         });
+        
+        
 	
 });

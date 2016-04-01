@@ -11,10 +11,10 @@ class Recipe extends Model
     ];
     
     public function users(){
-        return $this->belongsTo('app\User', 'foreign key');
+        return $this->belongsTo('App\User', 'user_id');
     }
     
       public function ingredients(){
-        return $this->belongsToMany('app\Ingredient', 'recipe_ingredient');
+        return $this->belongsToMany('App\Ingredient', 'recipe_ingredient', 'recipes_id', 'ingredients_id');
     }
 }

@@ -15,7 +15,9 @@ Route::group(['middleware' => ['web','auth']], function () {
     
     
     Route::get('/recipes', ['as' => 'recipe', 'uses' => 'RecipeController@read']);
-    Route::delete('recipes/{id}', ['as' => 'recipe', 'uses' => 'RecipeController@annihilate']);
+    Route::get('/recipes/{id}', ['as' => 'recipes.show', 'uses' => 'RecipeController@show']);
+    Route::get('/recipes/{id}/edit', ['as' => 'recipes.edit', 'uses' => 'RecipeController@edit']);
+    Route::delete('recipes/{id}', ['as' => 'recipes', 'uses' => 'RecipeController@annihilate']);
     
     Route::get('new_recipes', function(){
         return view('new_recipes');
@@ -23,7 +25,6 @@ Route::group(['middleware' => ['web','auth']], function () {
     
    Route::post('sendRecipe', 'RecipeController@insertRecipes');
    
-  // Route::post('sendRecipe', 'RecipeController@insertIngredients');
 });
 
  

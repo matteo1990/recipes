@@ -17,10 +17,7 @@
             </td>
         
             <td>
-               <span class="table_title"> Procedura</span>
-            </td>
-            <td>
-              <span class="table_title"> Id dell'autore</span>
+              <span class="table_title"> Nome dell'autore</span>
             </td>
         </tr>
          @foreach($recipes as $recipe)
@@ -30,21 +27,35 @@
             </td>
         
             <td>
-                {{ $recipe->procedure }}
-            </td>
-            <td>
-                {{ $recipe->user_id }}
+                {{ $recipe->users->name}}
             </td>
             
-            
+
             <td>
         {!! Form::open([
             'method' => 'DELETE',
             'url' => ['recipes', $recipe->id]
         ]) !!}
-            {!! Form::submit('cancella', ['class' => 'btn btn-danger']) !!}
+            {!! Form::submit('Cancella', ['class' => 'btn btn-danger']) !!}
         {!! Form::close() !!}
             </td>
+            <td>
+        {!! Form::open([
+            'method' => 'get',
+            'route' => ['recipes.show', $recipe->id]
+        ]) !!}
+            {!! Form::submit('Leggi', ['class' => 'btn btn-success']) !!}
+        {!! Form::close() !!}
+            </td>
+            <td>
+        {!! Form::open([
+            'method' => 'get',
+            'route' => ['recipes.edit', $recipe->id]
+        ]) !!}
+            {!! Form::submit('Modifica', ['class' => 'btn btn-warning']) !!}
+        {!! Form::close() !!}
+            </td>
+
             
         </tr> 
               

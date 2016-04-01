@@ -16,7 +16,7 @@ class User extends Authenticatable
     ];
     
     public function ingredients(){
-         return $this->hasMany('app\Recipe');
+         return $this->hasMany('App\Recipe');
     }
 
     /**

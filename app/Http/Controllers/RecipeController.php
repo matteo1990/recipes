@@ -11,6 +11,12 @@ class RecipeController extends Controller
         return view('recipes',['recipes' => $recipes]);
     } 
     
+    public function show($id){
+        $recipe = \App\Recipe::find($id);
+        return view('show')->with('recipe', $recipe);
+    }
+    
+    
     public function annihilate($id){
         $recipe = \App\Recipe::find($id);
         $recipe->delete();
@@ -19,14 +25,21 @@ class RecipeController extends Controller
         
     }
     
+   public function edit($id)
+    {
+    $recipe = \App\Recipe::find($id);
+
+    return view('edit')->withRecipe($recipe);
+    
+    }
+    
     public function insertRecipes(Request $request){
      
         $user_id = Auth::user()->id;
         $recipe = \App\Recipe::create([ 'name'=>$request->newRecipeName, 
                                         'procedure'=>$request->newRecipeProcedure, 
                                         'user_id'=>$user_id]);
-         
-         
+                                        
            foreach($request->addIngredients as $ingredient){
                 $ingr = \App\Ingredient::where('name', '=', $ingredient)->first();
 

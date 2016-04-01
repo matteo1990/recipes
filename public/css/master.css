@@ -37,3 +37,17 @@ table, th, td {
     padding: 15px;
 }
 
+.single_recipe {
+    padding: 25px;
+    border: solid green 2px;
+}
+
+/*.pkmn{
+    background-image: url("http://img05.deviantart.net/707c/i/2015/259/c/2/pizza_time_by_ry_spirit-d99sdx3.jpg");
+    width: 800px;
+    height: 300px;
+   margin-right: 400px;
+    position: relative;
+    
+}
+
