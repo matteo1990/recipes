@@ -9,25 +9,27 @@
 
 @section('content')
 
-    {!! Form::open(['url' => 'sendRecipe', 'method'=>'post']) !!}
-  
-    <div class='row'>
-        {!! Form::label('Nome della ricetta') !!}
-        {!! Form::text ('name', null,['id'=>'name', 'class'=>'form-control']) !!}
+{{ Form::model($recipe, array('route' => array('recipes.update', $recipe->id), 'method' => 'PUT')) }}
+ 
+   <div class='row'>
+        {!! Form::label('name', 'Nome della ricetta') !!}
+        {!! Form::text ('name', null, array('class'=>'form-control')) !!}
     </div>
+
     <br /> 
     
     <div class='row'>
-        {!! Form::label('Come si fa?') !!}
-        {!! Form::textarea('procedure', null, ['id'=>'procedure', 'class'=>'form-control', 'rows'=>'3']) !!}
+        {!! Form::label('procedure', 'Come si fa?') !!}
+        {!! Form::textarea('procedure', null, array('class'=>'form-control')) !!}
     </div> 
-    <br />
- 
-    {!! Form::button ('Invia', ['id'=>'pressMe3', 'class'=>'btn btn-primary']) !!}
-    
-{!! Form::close() !!}
- 
     <br /> 
+    
+    
+  <!--  {!! Form::button ('Invia', [ 'class'=>'btn btn-primary']) !!} -->
+    
+    
+    {{ Form::submit('Modifica', array('class' => 'btn btn-primary')) }}
+{!! Form::close() !!}
 
 
 @stop

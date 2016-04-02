@@ -33,6 +33,24 @@ class RecipeController extends Controller
     
     }
     
+    public function update(Request $request, $id)
+    {
+        
+        
+        $recipe = \App\Recipe::find($id);
+            
+            
+        $recipe = \App\Recipe::findOrFail($id);
+        $input = $request->all();
+        $recipe->update($input);
+            
+            return redirect('recipes');
+            
+        }
+    
+    
+    
+    
     public function insertRecipes(Request $request){
      
         $user_id = Auth::user()->id;

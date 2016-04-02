@@ -1,6 +1,6 @@
 $().ready(function(){
     
-    
+    //Post yr recipes with ingredients.
 
         $("#pressMe1").click(function(){ 
             var name = $("#name").val();
@@ -22,6 +22,8 @@ $().ready(function(){
     
         });
         
+        //store ingredients into the array.
+        
          $("#pressMe2").click(function(){ 
     	    var text2 = $('#ingrName').val();
     		$("#ingredients_list").prepend(text2 + "<br />");
@@ -30,19 +32,16 @@ $().ready(function(){
 
         });
         
-       
         
+        //ingredients' array.
         
-        /* 
-        ingredients' array.
-        */
 
         var arrIngredients = [];
         
 
 
-        /*button controls: from disabled to enabled.
-        */
+        //button controls: from disabled to enabled.
+        
         
         $("#name").keypress( function() {
             var textlength = $('#name').val().length;
@@ -58,6 +57,6 @@ $().ready(function(){
             	}
         });
         
-        
+       
 	
 });

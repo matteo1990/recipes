@@ -26,7 +26,7 @@
                {{ $recipe->name }}
             </td>
         
-            <td>
+            <td id="recipes_author">
                 {{ $recipe->users->name}}
             </td>
             
@@ -34,7 +34,8 @@
             <td>
         {!! Form::open([
             'method' => 'DELETE',
-            'url' => ['recipes', $recipe->id]
+            'url' => ['recipes', $recipe->id],
+            'id'=>'deleteButton'
         ]) !!}
             {!! Form::submit('Cancella', ['class' => 'btn btn-danger']) !!}
         {!! Form::close() !!}
