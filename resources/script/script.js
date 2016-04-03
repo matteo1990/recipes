@@ -32,6 +32,8 @@ $().ready(function(){
 
         });
         
+       
+        
         
         //ingredients' array.
         
@@ -56,6 +58,15 @@ $().ready(function(){
         	    	$('#pressMe2').prop('disabled', false);
             	}
         });
+        
+       /* $().ready(function() {
+           var author_id = $('#author_id').val();
+           var actual_user = $('#actual_user').val();
+           if (author_id == actual_user){
+               $('#editButton').prop('disabled', false);
+               $('#deleteButton').prop('disabled', false);
+           }
+       });*/
         
        
 	

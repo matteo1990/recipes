@@ -11,7 +11,7 @@
    
 {!! Form::open(['url' => 'sendIngredient', 'method'=>'post']) !!}
     <div class='row'>
-      {!! Form::label("inserisci qui il nome dell'ingrediente") !!}
+      {!! Form::label("inserisci, uno alla volta, gli ingredienti") !!}
       {!! Form::text('ingredients', null, ['class'=>'form-control', 'id'=>'ingrName']) !!}
     </div>
   
